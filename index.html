@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>주식회사 톰즈워커즈</title>
+<meta name="description" content="주식회사 톰즈워커즈는 모바일 앱을 만듭니다. 가입을 요구하지 않고, 필요 없는 것은 받지 않는 앱을 만듭니다.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="주식회사 톰즈워커즈">
+<meta property="og:description" content="주식회사 톰즈워커즈는 모바일 앱을 만듭니다. 가입을 요구하지 않고, 필요 없는 것은 받지 않는 앱을 만듭니다.">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:url" content="https://tomsworkers.io/">
+<link rel="canonical" href="https://tomsworkers.io/">
+<!-- ⚠️ 파비콘과 og:image 가 없다. 있는 그림은 마이베이스볼스타의 아이콘뿐인데,
+     그건 앱의 얼굴이지 회사의 얼굴이 아니다. 회사 마크가 생기면 favicon.png ·
+     apple-touch-icon.png · og:image 를 여기에 함께 넣는다. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;600;700&display=swap">
+<style>
+/* ─────────────────────────────────────────────────────────────
+   회사 소개 한 장이다. Jekyll 을 쓰지 않는다(.nojekyll) — 페이지가
+   하나뿐인데 레이아웃과 설정 파일을 두면 고칠 곳만 늘어난다.
+
+   색과 글꼴은 마이베이스볼스타 랜딩(mabas-site)에서 가져왔다. 만든 회사가
+   같으니 얼굴도 같은 편이 낫다. 다만 앱의 별 로고는 제품 카드 안에서만
+   쓴다 — 회사 자리에 앱 아이콘을 놓으면 둘이 같은 것이 되어 버린다.
+   ───────────────────────────────────────────────────────────── */
+:root{
+  --page:#FFFFFF; --page-alt:#F6F7F9; --rule:#E9EBEF;
+  --ink:#15181D; --ink-2:#5C6470; --ink-3:#79818E;
+  --accent:#E01B2E;
+
+  --sans:"IBM Plex Sans KR",-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+:root{color-scheme:light dark}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --page:#0A0C10; --page-alt:#12151B; --rule:#232833;
+    --ink:#EDF0F5; --ink-2:#A6AEBC; --ink-3:#7C8593;
+    --accent:#FF5566;
+  }
+}
+:root[data-theme="dark"]{
+  --page:#0A0C10; --page-alt:#12151B; --rule:#232833;
+  --ink:#EDF0F5; --ink-2:#A6AEBC; --ink-3:#7C8593;
+  --accent:#FF5566;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--page);color:var(--ink);font-family:var(--sans);
+  -webkit-font-smoothing:antialiased;line-height:1.7;
+  /* ⚠️ 한글은 기본 규칙에서 아무 글자 사이에나 줄이 갈린다. [세 / 명만]
+     처럼 한 낱말이 쪼개진다. 어절 단위로 끊는다. */
+  word-break:keep-all;overflow-wrap:break-word}
+img{max-width:100%}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+/* ── 맨 위 줄 ─────────────────────────────────────── */
+.top{display:flex;align-items:center;gap:10px;padding:22px 0}
+.top .nm{font-size:17px;font-weight:700;letter-spacing:-.035em;white-space:nowrap}
+.top nav{margin-left:auto;display:flex;gap:18px;flex-wrap:wrap;justify-content:flex-end}
+.top nav a{font-size:13px;color:var(--ink-2);text-decoration:none}
+.top nav a:hover{color:var(--ink)}
+.top nav a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:3px}
+
+/* ── 첫 화면 ──────────────────────────────────────── */
+.hero{padding:60px 0 74px;display:flex;flex-direction:column;gap:18px}
+.eb{font-family:var(--mono);font-size:11.5px;font-weight:700;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--accent)}
+/* ⚠️ max-width 는 각자에게 준다. ch 는 그 글자의 크기로 재므로 .hero 에
+   한 번 걸면 큰 제목이 본문 폭에 갇힌다. */
+.hero h1{font-size:clamp(30px,5.4vw,50px);font-weight:700;letter-spacing:-.045em;
+  line-height:1.2;text-wrap:balance;max-width:24ch}
+.hero p{font-size:clamp(15px,2vw,17px);color:var(--ink-2);text-wrap:pretty;max-width:34ch}
+
+/* ── 칸 ───────────────────────────────────────────── */
+.band{padding:72px 0}
+.band.alt{background:var(--page-alt)}
+.band h2,.say h2{font-size:clamp(23px,3.2vw,31px);font-weight:700;letter-spacing:-.04em;
+  line-height:1.3;text-wrap:balance}
+.lede{font-size:15px;color:var(--ink-2);margin-top:12px;max-width:44ch;text-wrap:pretty}
+
+/* 원칙 셋 */
+.rules{display:grid;grid-template-columns:1fr;gap:30px;margin-top:42px}
+@media(min-width:860px){.rules{grid-template-columns:repeat(3,1fr);gap:36px}}
+.rule{display:flex;flex-direction:column;gap:9px;border-top:1px solid var(--rule);padding-top:16px}
+.rule .no{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.12em;
+  color:var(--accent)}
+.rule h3{font-size:17.5px;font-weight:700;letter-spacing:-.03em;line-height:1.45}
+.rule p{font-size:14.5px;color:var(--ink-2);text-wrap:pretty}
+
+/* 만들고 있는 것 — 글 왼쪽, 카드 오른쪽 */
+.duo{display:grid;grid-template-columns:1fr;gap:34px}
+@media(min-width:900px){
+  .duo{grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:56px;align-items:center}
+}
+.work{border:1px solid var(--rule);border-radius:20px;
+  padding:26px 24px;display:flex;flex-direction:column;gap:15px}
+.work .hd{display:flex;align-items:center;gap:13px}
+/* 앱의 진짜 로고. 여기가 이 그림을 쓰는 유일한 자리다. */
+.work .hd img{width:40px;height:40px;flex:0 0 auto}
+.work .hd .t{font-size:18.5px;font-weight:700;letter-spacing:-.035em}
+.work .hd .k{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;
+  color:var(--ink-3);margin-top:3px}
+.work p{font-size:14.5px;color:var(--ink-2);text-wrap:pretty}
+.work .go{align-self:flex-start;font-size:14px;font-weight:600;color:var(--accent);
+  text-decoration:none}
+.work .go:hover{text-decoration:underline}
+.work .go::after{content:" →"}
+
+/* 회사 정보 */
+.info{margin-top:30px;border-top:1px solid var(--rule)}
+.info .row{display:flex;gap:18px;align-items:baseline;padding:13px 2px;
+  border-bottom:1px solid var(--rule)}
+.info dt{flex:0 0 6.5em;font-size:12.5px;color:var(--ink-3);letter-spacing:-.01em}
+.info dd{font-size:14.5px;color:var(--ink-2)}
+.info dd .en{font-family:var(--mono);font-size:12px;color:var(--ink-3)}
+.info a{color:var(--accent);text-decoration:none}
+.info a:hover{text-decoration:underline}
+
+/* ── 맺음 ─────────────────────────────────────────── */
+.end{text-align:center;padding:86px 0 70px;display:flex;flex-direction:column;
+  align-items:center;gap:14px}
+.end h2{font-size:clamp(24px,3.6vw,34px);font-weight:700;letter-spacing:-.04em;
+  text-wrap:balance;max-width:20ch}
+.end p{font-size:15px;color:var(--ink-2);max-width:34ch}
+.end .mail{margin-top:6px;font-family:var(--mono);font-size:15px;font-weight:600;
+  color:var(--accent);text-decoration:none}
+.end .mail:hover{text-decoration:underline}
+footer{border-top:1px solid var(--rule);padding:34px 0 60px;
+  display:flex;flex-wrap:wrap;gap:18px 32px;align-items:baseline}
+footer .co{font-size:13px;color:var(--ink-2)}
+footer nav{display:flex;gap:20px;margin-left:auto;flex-wrap:wrap}
+footer a{font-size:13px;color:var(--ink-2);text-decoration:none}
+footer a:hover{color:var(--ink)}
+footer a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:3px}
+
+@media (prefers-reduced-motion:no-preference){
+  .rise{animation:rise .6s cubic-bezier(.2,.7,.3,1) backwards}
+  @keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <div class="top">
+    <span class="nm">톰즈워커즈</span>
+    <nav>
+      <a href="https://mybaseballstar.app">마이베이스볼스타</a>
+      <a href="mailto:tom@tomsworkers.io">문의</a>
+    </nav>
+  </div>
+</div>
+
+<div class="wrap">
+  <section class="hero rise">
+    <div class="eb">Tomsworkers</div>
+    <h1>필요한 것만 만들고<br>필요한 것만 받습니다</h1>
+    <p>주식회사 톰즈워커즈는 모바일 앱을 만듭니다. 지금 만들고 있는 것은
+      야구 앱 하나입니다.</p>
+  </section>
+</div>
+
+<div class="band alt">
+  <div class="wrap">
+    <h2>만드는 방식</h2>
+    <p class="lede">앱을 잘 만드는 방법은 잘 모르겠지만, 하지 않기로 정한 것은
+      셋 있습니다.</p>
+
+    <div class="rules">
+      <div class="rule">
+        <div class="no">01</div>
+        <h3>가입부터 시키지 않습니다</h3>
+        <p>앱을 열면 바로 선수를 고를 수 있습니다. 회원가입도 로그인도 없습니다.
+          계정이 없으니 탈퇴 절차도 없고, 앱을 지우면 그걸로 끝입니다.</p>
+      </div>
+
+      <div class="rule">
+        <div class="no">02</div>
+        <h3>필요 없는 것은 받지 않습니다</h3>
+        <p>이름, 이메일, 전화번호, 주소록, 사진, 위치를 받지 않습니다. 광고
+          식별자도 분석 SDK 도 쓰지 않습니다. 저장하는 것은 알림을 보내는 데
+          필요한 익명 식별자와 푸시 토큰, 그리고 고른 선수뿐입니다.</p>
+      </div>
+
+      <div class="rule">
+        <div class="no">03</div>
+        <h3>적은 것과 만든 것을 맞춥니다</h3>
+        <p>이용약관과 개인정보 처리방침은 앱이 실제로 하는 일을 그대로 적습니다.
+          스토어에 신고하는 항목도 같은 문서에 맞춥니다. 문서가 앱보다 좋게
+          적히는 일은 없습니다.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="band">
+  <div class="wrap">
+    <div class="duo">
+      <div class="say">
+        <h2>만들고 있는 것</h2>
+        <p class="lede">하나입니다. 둘로 늘릴 계획은 아직 없습니다.</p>
+      </div>
+
+      <div>
+        <div class="work">
+          <div class="hd">
+            <img src="logo.png" alt="" width="40" height="40">
+            <div>
+              <div class="t">마이베이스볼스타</div>
+              <div class="k">mybaseballstar · KBO · MLB</div>
+            </div>
+          </div>
+          <p>팀이 아니라 선수를 따라가는 야구 앱입니다. 팔로우한 선수의 출전 예고,
+            타석과 등판 결과, 경기 종료를 알림으로 알려줍니다. 시즌 기록과 오늘 경기
+            상황도 함께 보여줍니다.</p>
+          <p>iOS 앱을 준비하고 있습니다.</p>
+          <a class="go" href="https://mybaseballstar.app">mybaseballstar.app</a>
+        </div>
+
+        <!-- ⚠️ 여기 적힌 것은 확인된 사실뿐이다. 사업자등록번호·주소·대표자·
+             설립일은 근거가 없어서 비워 뒀다. 채울 때는 등기와 사업자등록증을
+             보고 그대로 옮긴다 — 마이베이스볼스타 약관·처리방침의 [시행자]와
+             다른 이름이 여기 적히면 안 된다. -->
+        <dl class="info">
+          <div class="row">
+            <dt>상호</dt>
+            <dd>주식회사 톰즈워커즈 <span class="en">Tomsworkers Inc.</span></dd>
+          </div>
+          <div class="row">
+            <dt>하는 일</dt>
+            <dd>모바일 앱 기획·개발</dd>
+          </div>
+          <div class="row">
+            <dt>이메일</dt>
+            <dd><a href="mailto:tom@tomsworkers.io">tom@tomsworkers.io</a></dd>
+          </div>
+          <div class="row">
+            <dt>인스타그램</dt>
+            <dd><a href="https://www.instagram.com/mybaseballstar/">@mybaseballstar</a></dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <section class="end">
+    <h2>하고 싶은 말이<br>있으시면</h2>
+    <p>제안도, 버그 제보도, 그냥 하는 이야기도 좋습니다.</p>
+    <a class="mail" href="mailto:tom@tomsworkers.io">tom@tomsworkers.io</a>
+  </section>
+
+  <footer>
+    <div class="co">
+      주식회사 톰즈워커즈 · <a href="mailto:tom@tomsworkers.io">tom@tomsworkers.io</a>
+    </div>
+    <nav>
+      <a href="https://mybaseballstar.app">마이베이스볼스타</a>
+      <a href="https://www.instagram.com/mybaseballstar/">인스타그램</a>
+      <a href="https://mybaseballstar.app/terms">이용약관</a>
+      <a href="https://mybaseballstar.app/privacy">개인정보 처리방침</a>
+    </nav>
+  </footer>
+</div>
+
+</body>
+</html>
