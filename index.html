@@ -11,9 +11,19 @@
 <meta property="og:locale" content="ko_KR">
 <meta property="og:url" content="https://tomsworkers.io/">
 <link rel="canonical" href="https://tomsworkers.io/">
-<!-- ⚠️ 파비콘과 og:image 가 없다. 있는 그림은 마이베이스볼스타의 아이콘뿐인데,
-     그건 앱의 얼굴이지 회사의 얼굴이 아니다. 회사 마크가 생기면 favicon.png ·
-     apple-touch-icon.png · og:image 를 여기에 함께 넣는다. -->
+<meta property="og:image" content="https://tomsworkers.io/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<!-- ⚠️ 파비콘은 로고 전체가 아니라 TW 부분만 잘라 남색 바탕에 흰색으로 판
+     것이다. 로고를 그대로 줄이면 16px 에서 깃발·</>·파도가 다 뭉개져 파란
+     얼룩만 남는다. 남색 바탕을 까는 이유는 어두운 탭에서 남색 마크가 배경에
+     묻혀 사라지기 때문이다. 고칠 일이 있으면 두 크기를 같이 다시 뽑는다. -->
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<!-- ⚠️ iOS 는 제 손으로 모서리를 깎는다. 여기에 둥근 모서리나 투명도를 넣으면
+     이중으로 깎이거나 검은 바탕이 비친다. 각진 정사각 불투명 그림이어야 한다. -->
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;600;700&display=swap">
@@ -57,7 +67,16 @@ img{max-width:100%}
 .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
 
 /* ── 맨 위 줄 ─────────────────────────────────────── */
-.top{display:flex;align-items:center;gap:10px;padding:22px 0}
+.top{display:flex;align-items:center;gap:9px;padding:22px 0}
+/* ⚠️ 마크는 남색이라 어두운 바탕에서 배경에 묻힌다. 다크에서는 남색을 흰색으로
+   바꾼 그림으로 갈아 끼운다. 두 파일은 같은 원본에서 나왔으므로 로고가 바뀌면
+   둘 다 다시 뽑아야 한다. */
+.top .mark{width:30px;height:30px;flex:0 0 auto;
+  background:url("logo-mark.png") center/contain no-repeat}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]) .top .mark{background-image:url("logo-mark-dark.png")}
+}
+:root[data-theme="dark"] .top .mark{background-image:url("logo-mark-dark.png")}
 .top .nm{font-size:17px;font-weight:700;letter-spacing:-.035em;white-space:nowrap}
 .top nav{margin-left:auto;display:flex;gap:18px;flex-wrap:wrap;justify-content:flex-end}
 .top nav a{font-size:13px;color:var(--ink-2);text-decoration:none}
@@ -146,6 +165,7 @@ footer a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border
 
 <div class="wrap">
   <div class="top">
+    <i class="mark"></i>
     <span class="nm">톰즈워커즈</span>
     <nav>
       <a href="https://mybaseballstar.app">마이베이스볼스타</a>
