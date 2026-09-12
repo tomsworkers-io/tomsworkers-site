@@ -157,7 +157,9 @@ footer{border-top:1px solid var(--rule);padding:34px 0 60px;
 footer .co{font-size:13px;color:var(--ink-2)}
 footer .motto{display:block;font-family:var(--mono);font-size:11px;font-weight:600;
   letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:7px}
-footer nav{display:flex;gap:20px;margin-left:auto;flex-wrap:wrap}
+footer nav{display:flex;gap:20px;margin-left:auto;flex-wrap:wrap;align-items:baseline}
+footer .grp{font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.08em;
+  color:var(--ink-3);text-transform:uppercase}
 footer a{font-size:13px;color:var(--ink-2);text-decoration:none}
 footer a:hover{color:var(--ink)}
 footer a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:3px}
@@ -230,7 +232,7 @@ footer a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border
     <div class="duo">
       <div class="say">
         <h2>만든 것</h2>
-        <p class="lede">지금 물에 떠 있는 것은 하나입니다. 늘어나면 여기에
+        <p class="lede">직접 만들어 내보낸 것을 여기에 올립니다. 늘어나면
           더합니다.</p>
       </div>
 
@@ -276,10 +278,6 @@ footer a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border
             <dt>이메일</dt>
             <dd><a href="mailto:tom@tomsworkers.io">tom@tomsworkers.io</a></dd>
           </div>
-          <div class="row">
-            <dt>인스타그램</dt>
-            <dd><a href="https://www.instagram.com/mybaseballstar/">@mybaseballstar</a></dd>
-          </div>
         </dl>
       </div>
     </div>
@@ -298,10 +296,13 @@ footer a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border
       <span class="motto">Build software that sails</span>
       주식회사 톰즈워커즈 · <a href="mailto:tom@tomsworkers.io">tom@tomsworkers.io</a>
     </div>
-    <nav>
-      <a href="https://mybaseballstar.app">마이베이스볼스타</a>
+    <!-- ⚠️ 이 넷은 회사 링크가 아니라 마이베이스볼스타의 것이다. 묶지 않고
+         늘어놓으면 회사 링크로 읽혀서, 회사가 앱 하나인 것처럼 보인다. -->
+    <nav aria-label="마이베이스볼스타">
+      <span class="grp">마이베이스볼스타</span>
+      <a href="https://mybaseballstar.app">사이트</a>
       <a href="https://www.instagram.com/mybaseballstar/">인스타그램</a>
-      <a href="https://mybaseballstar.app/terms">마이베이스볼스타 이용약관</a>
+      <a href="https://mybaseballstar.app/terms">이용약관</a>
       <a href="https://mybaseballstar.app/privacy">개인정보 처리방침</a>
     </nav>
   </footer>
