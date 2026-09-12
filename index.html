@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>주식회사 톰즈워커즈</title>
-<meta name="description" content="주식회사 톰즈워커즈는 모바일 앱을 만듭니다. 가입을 요구하지 않고, 필요 없는 것은 받지 않는 앱을 만듭니다.">
+<meta name="description" content="주식회사 톰즈워커즈는 소프트웨어를 만듭니다. 만들어서 내보내고, 내보낸 뒤에도 계속 떠 있게 합니다.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="주식회사 톰즈워커즈">
-<meta property="og:description" content="주식회사 톰즈워커즈는 모바일 앱을 만듭니다. 가입을 요구하지 않고, 필요 없는 것은 받지 않는 앱을 만듭니다.">
+<meta property="og:description" content="주식회사 톰즈워커즈는 소프트웨어를 만듭니다. 만들어서 내보내고, 내보낸 뒤에도 계속 떠 있게 합니다.">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:url" content="https://tomsworkers.io/">
 <link rel="canonical" href="https://tomsworkers.io/">
@@ -29,14 +29,18 @@
    회사 소개 한 장이다. Jekyll 을 쓰지 않는다(.nojekyll) — 페이지가
    하나뿐인데 레이아웃과 설정 파일을 두면 고칠 곳만 늘어난다.
 
-   색과 글꼴은 마이베이스볼스타 랜딩(mabas-site)에서 가져왔다. 만든 회사가
-   같으니 얼굴도 같은 편이 낫다. 다만 앱의 별 로고는 제품 카드 안에서만
-   쓴다 — 회사 자리에 앱 아이콘을 놓으면 둘이 같은 것이 되어 버린다.
+   글꼴은 마이베이스볼스타 랜딩(mabas-site)에서 가져왔지만 색은 다르다.
+   빨강은 앱 것이고 여기는 회사다. 마크의 남색·파랑을 쓴다.
+
+   ⚠️ 강조색은 로고 원색(#0076F6)이 아니다. 그 파랑은 흰 바탕에서 4.27:1 이라
+   본문 링크 기준(4.5:1)에 못 미친다. 눈에 거의 같으면서 통과하는 값으로
+   내렸다. 색을 손볼 때 이 선을 다시 넘기지 않는다.
    ───────────────────────────────────────────────────────────── */
 :root{
-  --page:#FFFFFF; --page-alt:#F6F7F9; --rule:#E9EBEF;
-  --ink:#15181D; --ink-2:#5C6470; --ink-3:#79818E;
-  --accent:#E01B2E;
+  --page:#FFFFFF; --page-alt:#F4F7FB; --rule:#E3E9F1;
+  --ink:#15181D; --ink-2:#5A6472; --ink-3:#79828F;
+  --accent:#0A63D8;      /* 흰 바탕 5.54:1 */
+  --navy:#022D61;        /* 마크의 진한 쪽 */
 
   --sans:"IBM Plex Sans KR",-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo",sans-serif;
   --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
@@ -44,15 +48,17 @@
 :root{color-scheme:light dark}
 @media (prefers-color-scheme:dark){
   :root:not([data-theme="light"]){
-    --page:#0A0C10; --page-alt:#12151B; --rule:#232833;
-    --ink:#EDF0F5; --ink-2:#A6AEBC; --ink-3:#7C8593;
-    --accent:#FF5566;
+    --page:#0A0C10; --page-alt:#0F141D; --rule:#1F2836;
+    --ink:#EDF0F5; --ink-2:#A4ADBC; --ink-3:#7A8494;
+    --accent:#4DA3FF;    /* 어두운 바탕 7.45:1 */
+    --navy:#8FB8EA;
   }
 }
 :root[data-theme="dark"]{
-  --page:#0A0C10; --page-alt:#12151B; --rule:#232833;
-  --ink:#EDF0F5; --ink-2:#A6AEBC; --ink-3:#7C8593;
-  --accent:#FF5566;
+  --page:#0A0C10; --page-alt:#0F141D; --rule:#1F2836;
+  --ink:#EDF0F5; --ink-2:#A4ADBC; --ink-3:#7A8494;
+  --accent:#4DA3FF;
+  --navy:#8FB8EA;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 body{background:var(--page);color:var(--ink);font-family:var(--sans);
@@ -109,7 +115,9 @@ img{max-width:100%}
 /* 만들고 있는 것 — 글 왼쪽, 카드 오른쪽 */
 .duo{display:grid;grid-template-columns:1fr;gap:34px}
 @media(min-width:900px){
-  .duo{grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:56px;align-items:center}
+  /* ⚠️ 가운데 정렬은 안 된다. 오른쪽이 카드 + 회사 정보 여섯 줄이라 훨씬
+     길다. 가운데에 맞추면 왼쪽 제목이 허공에 뜬다. 위로 붙인다. */
+  .duo{grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:56px;align-items:start}
 }
 .work{border:1px solid var(--rule);border-radius:20px;
   padding:26px 24px;display:flex;flex-direction:column;gap:15px}
@@ -147,6 +155,8 @@ img{max-width:100%}
 footer{border-top:1px solid var(--rule);padding:34px 0 60px;
   display:flex;flex-wrap:wrap;gap:18px 32px;align-items:baseline}
 footer .co{font-size:13px;color:var(--ink-2)}
+footer .motto{display:block;font-family:var(--mono);font-size:11px;font-weight:600;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:7px}
 footer nav{display:flex;gap:20px;margin-left:auto;flex-wrap:wrap}
 footer a{font-size:13px;color:var(--ink-2);text-decoration:none}
 footer a:hover{color:var(--ink)}
@@ -165,7 +175,8 @@ footer a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border
     <i class="mark"></i>
     <span class="nm">톰즈워커즈</span>
     <nav>
-      <a href="https://mybaseballstar.app">마이베이스볼스타</a>
+      <a href="#how">만드는 방식</a>
+      <a href="#work">만든 것</a>
       <a href="mailto:tom@tomsworkers.io">문의</a>
     </nav>
   </div>
@@ -173,52 +184,54 @@ footer a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border
 
 <div class="wrap">
   <section class="hero rise">
-    <div class="eb">Tomsworkers</div>
-    <h1>필요한 것만 만들고<br>필요한 것만 받습니다</h1>
-    <p>주식회사 톰즈워커즈는 모바일 앱을 만듭니다. 지금 만들고 있는 것은
-      야구 앱 하나입니다.</p>
+    <div class="eb">Build software that sails</div>
+    <h1>만들고, 띄우고,<br>띄워 둡니다</h1>
+    <p>주식회사 톰즈워커즈는 소프트웨어를 만듭니다. 만들어서 내보내고,
+      내보낸 뒤에도 계속 떠 있게 합니다.</p>
   </section>
 </div>
 
-<div class="band alt">
+<div class="band alt" id="how">
   <div class="wrap">
     <h2>만드는 방식</h2>
-    <p class="lede">앱을 잘 만드는 방법은 잘 모르겠지만, 하지 않기로 정한 것은
-      셋 있습니다.</p>
+    <p class="lede">소프트웨어를 잘 만드는 방법은 아직 잘 모르겠습니다. 다만
+      지키기로 정한 것은 셋 있습니다.</p>
 
     <div class="rules">
       <div class="rule">
         <div class="no">01</div>
-        <h3>가입부터 시키지 않습니다</h3>
-        <p>앱을 열면 바로 선수를 고를 수 있습니다. 회원가입도 로그인도 없습니다.
-          계정이 없으니 탈퇴 절차도 없고, 앱을 지우면 그걸로 끝입니다.</p>
+        <h3>필요 없는 것은 싣지 않습니다</h3>
+        <p>만들 때마다 [이게 없어도 되나]를 먼저 봅니다. 계정, 개인정보, 광고
+          식별자, 분석 도구 — 없어도 되면 넣지 않습니다. 싣지 않은 것은
+          고장 나지 않습니다.</p>
       </div>
 
       <div class="rule">
         <div class="no">02</div>
-        <h3>필요 없는 것은 받지 않습니다</h3>
-        <p>이름, 이메일, 전화번호, 주소록, 사진, 위치를 받지 않습니다. 광고
-          식별자도 분석 SDK 도 쓰지 않습니다. 저장하는 것은 알림을 보내는 데
-          필요한 익명 식별자와 푸시 토큰, 그리고 고른 선수뿐입니다.</p>
+        <h3>적은 것과 만든 것을 맞춥니다</h3>
+        <p>문서에 적힌 것과 코드가 하는 일이 같아야 합니다. 이용약관,
+          개인정보 처리방침, 스토어에 신고하는 항목까지 실제 동작에 맞춥니다.
+          문서가 물건보다 좋게 적히는 일은 없습니다.</p>
       </div>
 
       <div class="rule">
         <div class="no">03</div>
-        <h3>적은 것과 만든 것을 맞춥니다</h3>
-        <p>이용약관과 개인정보 처리방침은 앱이 실제로 하는 일을 그대로 적습니다.
-          스토어에 신고하는 항목도 같은 문서에 맞춥니다. 문서가 앱보다 좋게
-          적히는 일은 없습니다.</p>
+        <h3>내보낸 뒤가 더 깁니다</h3>
+        <p>만드는 데 걸리는 시간보다 떠 있게 하는 시간이 깁니다. 내보내고
+          나서 고치고 지키는 것까지를 일로 칩니다. 띄워 놓고 손 떼지
+          않습니다.</p>
       </div>
     </div>
   </div>
 </div>
 
-<div class="band">
+<div class="band" id="work">
   <div class="wrap">
     <div class="duo">
       <div class="say">
-        <h2>만들고 있는 것</h2>
-        <p class="lede">하나입니다. 둘로 늘릴 계획은 아직 없습니다.</p>
+        <h2>만든 것</h2>
+        <p class="lede">지금 물에 떠 있는 것은 하나입니다. 늘어나면 여기에
+          더합니다.</p>
       </div>
 
       <div>
@@ -257,7 +270,7 @@ footer a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border
           </div>
           <div class="row">
             <dt>하는 일</dt>
-            <dd>모바일 앱 기획·개발</dd>
+            <dd>소프트웨어 개발</dd>
           </div>
           <div class="row">
             <dt>이메일</dt>
@@ -282,12 +295,13 @@ footer a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border
 
   <footer>
     <div class="co">
+      <span class="motto">Build software that sails</span>
       주식회사 톰즈워커즈 · <a href="mailto:tom@tomsworkers.io">tom@tomsworkers.io</a>
     </div>
     <nav>
       <a href="https://mybaseballstar.app">마이베이스볼스타</a>
       <a href="https://www.instagram.com/mybaseballstar/">인스타그램</a>
-      <a href="https://mybaseballstar.app/terms">이용약관</a>
+      <a href="https://mybaseballstar.app/terms">마이베이스볼스타 이용약관</a>
       <a href="https://mybaseballstar.app/privacy">개인정보 처리방침</a>
     </nav>
   </footer>
