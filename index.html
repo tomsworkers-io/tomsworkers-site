@@ -99,7 +99,7 @@ img{max-width:100%}
 /* ── 칸 ───────────────────────────────────────────── */
 .band{padding:72px 0}
 .band.alt{background:var(--page-alt)}
-.band h2,.say h2{font-size:clamp(23px,3.2vw,31px);font-weight:700;letter-spacing:-.04em;
+.band h2{font-size:clamp(23px,3.2vw,31px);font-weight:700;letter-spacing:-.04em;
   line-height:1.3;text-wrap:balance}
 .lede{font-size:15px;color:var(--ink-2);margin-top:12px;max-width:44ch;text-wrap:pretty}
 
@@ -112,29 +112,8 @@ img{max-width:100%}
 .rule h3{font-size:17.5px;font-weight:700;letter-spacing:-.03em;line-height:1.45}
 .rule p{font-size:14.5px;color:var(--ink-2);text-wrap:pretty}
 
-/* 만들고 있는 것 — 글 왼쪽, 카드 오른쪽 */
-.duo{display:grid;grid-template-columns:1fr;gap:34px}
-@media(min-width:900px){
-  /* ⚠️ 가운데 정렬은 안 된다. 오른쪽이 카드 + 회사 정보 여섯 줄이라 훨씬
-     길다. 가운데에 맞추면 왼쪽 제목이 허공에 뜬다. 위로 붙인다. */
-  .duo{grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:56px;align-items:start}
-}
-.work{border:1px solid var(--rule);border-radius:20px;
-  padding:26px 24px;display:flex;flex-direction:column;gap:15px}
-.work .hd{display:flex;align-items:center;gap:13px}
-/* 앱의 진짜 로고. 여기가 이 그림을 쓰는 유일한 자리다. */
-.work .hd img{width:40px;height:40px;flex:0 0 auto}
-.work .hd .t{font-size:18.5px;font-weight:700;letter-spacing:-.035em}
-.work .hd .k{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;
-  color:var(--ink-3);margin-top:3px}
-.work p{font-size:14.5px;color:var(--ink-2);text-wrap:pretty}
-.work .go{align-self:flex-start;font-size:14px;font-weight:600;color:var(--accent);
-  text-decoration:none}
-.work .go:hover{text-decoration:underline}
-.work .go::after{content:" →"}
-
 /* 회사 정보 */
-.info{margin-top:30px;border-top:1px solid var(--rule)}
+.info{margin-top:34px;max-width:56ch;border-top:1px solid var(--rule)}
 .info .row{display:flex;gap:18px;align-items:baseline;padding:13px 2px;
   border-bottom:1px solid var(--rule)}
 .info dt{flex:0 0 6.5em;font-size:12.5px;color:var(--ink-3);letter-spacing:-.01em}
@@ -178,7 +157,7 @@ footer a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border
     <span class="nm">톰즈워커즈</span>
     <nav>
       <a href="#how">만드는 방식</a>
-      <a href="#work">만든 것</a>
+      <a href="#company">회사 정보</a>
       <a href="mailto:tom@tomsworkers.io">문의</a>
     </nav>
   </div>
@@ -227,60 +206,37 @@ footer a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border
   </div>
 </div>
 
-<div class="band" id="work">
+<div class="band" id="company">
   <div class="wrap">
-    <div class="duo">
-      <div class="say">
-        <h2>만든 것</h2>
-        <p class="lede">직접 만들어 내보낸 것을 여기에 올립니다. 늘어나면
-          더합니다.</p>
-      </div>
+    <h2>회사 정보</h2>
 
-      <div>
-        <div class="work">
-          <div class="hd">
-            <img src="logo.png" alt="" width="40" height="40">
-            <div>
-              <div class="t">마이베이스볼스타</div>
-              <div class="k">mybaseballstar · KBO · MLB</div>
-            </div>
-          </div>
-          <p>팀이 아니라 선수를 따라가는 야구 앱입니다. 팔로우한 선수의 출전 예고,
-            타석과 등판 결과, 경기 종료를 알림으로 알려줍니다. 시즌 기록과 오늘 경기
-            상황도 함께 보여줍니다.</p>
-          <p>iOS 앱을 준비하고 있습니다.</p>
-          <a class="go" href="https://mybaseballstar.app">mybaseballstar.app</a>
-        </div>
-
-        <!-- ⚠️ 사업자등록번호와 주소는 일부러 비워 뒀다. 통신판매업도
-             전자상거래도 하지 않아 전자상거래법상 표시 의무가 없다. 빠뜨린
-             것이 아니다. 채우게 되면 사업자등록증을 보고 그대로 옮긴다 —
-             마이베이스볼스타 약관·처리방침의 [시행자]와 다른 이름이 여기
-             적히면 안 된다. -->
-        <dl class="info">
-          <div class="row">
-            <dt>상호</dt>
-            <dd>주식회사 톰즈워커즈 <span class="en">Tomsworkers Inc.</span></dd>
-          </div>
-          <div class="row">
-            <dt>대표자</dt>
-            <dd>Tom</dd>
-          </div>
-          <div class="row">
-            <dt>설립</dt>
-            <dd>2026년 8월 11일</dd>
-          </div>
-          <div class="row">
-            <dt>하는 일</dt>
-            <dd>소프트웨어 개발</dd>
-          </div>
-          <div class="row">
-            <dt>이메일</dt>
-            <dd><a href="mailto:tom@tomsworkers.io">tom@tomsworkers.io</a></dd>
-          </div>
-        </dl>
+    <!-- ⚠️ 사업자등록번호와 주소는 일부러 비워 뒀다. 통신판매업도
+         전자상거래도 하지 않아 전자상거래법상 표시 의무가 없다. 빠뜨린
+         것이 아니다. 채우게 되면 사업자등록증을 보고 그대로 옮긴다 —
+         마이베이스볼스타 약관·처리방침의 [시행자]와 다른 이름이 여기
+         적히면 안 된다. -->
+    <dl class="info">
+      <div class="row">
+        <dt>상호</dt>
+        <dd>주식회사 톰즈워커즈 <span class="en">Tomsworkers Inc.</span></dd>
       </div>
-    </div>
+      <div class="row">
+        <dt>대표자</dt>
+        <dd>Tom</dd>
+      </div>
+      <div class="row">
+        <dt>설립</dt>
+        <dd>2026년 8월 11일</dd>
+      </div>
+      <div class="row">
+        <dt>하는 일</dt>
+        <dd>소프트웨어 개발</dd>
+      </div>
+      <div class="row">
+        <dt>이메일</dt>
+        <dd><a href="mailto:tom@tomsworkers.io">tom@tomsworkers.io</a></dd>
+      </div>
+    </dl>
   </div>
 </div>
 
