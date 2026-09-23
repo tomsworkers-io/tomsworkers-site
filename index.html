@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>주식회사 톰즈워커즈</title>
-<meta name="description" content="주식회사 톰즈워커즈는 소프트웨어를 만듭니다. 만들고, 내보내고, 내보낸 뒤에도 오래 지킵니다.">
+<title>주식회사 톰즈워커즈 — 오래 가는 소프트웨어</title>
+<meta name="description" content="톰즈워커즈는 제품의 기획과 개발부터 출시 이후의 운영과 개선까지 책임지는 소프트웨어 스튜디오입니다.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="주식회사 톰즈워커즈">
-<meta property="og:description" content="주식회사 톰즈워커즈는 소프트웨어를 만듭니다. 만들고, 내보내고, 내보낸 뒤에도 오래 지킵니다.">
+<meta property="og:description" content="제품의 시작부터 오래 가는 운영까지. 톰즈워커즈는 만들고 끝내지 않습니다.">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:url" content="https://tomsworkers.io/">
 <link rel="canonical" href="https://tomsworkers.io/">
@@ -15,301 +15,285 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<!-- ⚠️ 파비콘은 로고 전체가 아니라 TW 부분만 잘라 남색 바탕에 흰색으로 판
-     것이다. 로고를 그대로 줄이면 16px 에서 깃발·</>·파도가 다 뭉개져 파란
-     얼룩만 남는다. 남색 바탕을 까는 이유는 어두운 탭에서 남색 마크가 배경에
-     묻혀 사라지기 때문이다. 고칠 일이 있으면 두 크기를 같이 다시 뽑는다. -->
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap">
 <style>
-/* ─────────────────────────────────────────────────────────────
-   시안 — 시스템 계열. TypeSafe 쪽 뼈대에 톰즈워커즈 색을 얹었다.
-
-   뼈대는 넷이다:
-   1. 디더(halftone) 구름. CSS 그라디언트로는 이 질감이 안 나와서
-      플로이드–스타인버그 디더로 실제 이미지를 찍었다(hero-dither.png).
-   2. 터미널 상자. 제목 줄 + 회색 본문 + 딱딱한 오프셋 그림자.
-   3. 초대형 제목. 자간을 극단적으로 좁힌다.
-   4. 재단 마크와 세로 글자 — 인쇄 교정지의 흔적.
-
-   ⚠️ 채도 높은 색은 하나뿐이다. 브랜드 파랑. 나머지는 흑백이다.
-      여기에 색을 하나만 더 들여도 이 계열은 곧바로 무너진다.
-   ───────────────────────────────────────────────────────────── */
 :root{
-  --paper:#FFFFFF; --paper-2:#F2F2F0; --panel:#E4E4E1;
-  --ink:#111315; --ink-2:#55585C; --ink-3:#8A8D91;
-  --line:#111315;
-  --blue:#0A63D8; --blue-deep:#022D61;
+  --paper:#fff;--paper-2:#f4f4f1;--panel:#e7e7e2;
+  --ink:#101214;--ink-2:#4e5257;--ink-3:#7a7f85;
+  --line:#101214;--blue:#0a63d8;--blue-deep:#022d61;
   --hero:url("hero-dither.png");
-
   --sans:"IBM Plex Sans KR",-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo",sans-serif;
   --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
 }
-@media (prefers-color-scheme:dark){
+@media(prefers-color-scheme:dark){
   :root{
-    --paper:#090C11; --paper-2:#101419; --panel:#1A1F26;
-    --ink:#EEF1F5; --ink-2:#A3AAB4; --ink-3:#727981;
-    --line:#39414B;
-    --blue:#4DA3FF; --blue-deep:#8FB8EA;
+    --paper:#090c11;--paper-2:#101419;--panel:#1a1f26;
+    --ink:#eef1f5;--ink-2:#a3aab4;--ink-3:#727981;
+    --line:#39414b;--blue:#4da3ff;--blue-deep:#8fb8ea;
     --hero:url("hero-dither-dark.png");
   }
 }
 *{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
 body{background:var(--paper);color:var(--ink);font-family:var(--sans);
-  -webkit-font-smoothing:antialiased;line-height:1.65;
-  word-break:keep-all;overflow-wrap:break-word;overflow-x:hidden}
-.wrap{max-width:1240px;margin:0 auto;padding:0 32px}
-@media(max-width:640px){.wrap{padding:0 18px}}
+  -webkit-font-smoothing:antialiased;line-height:1.65;word-break:keep-all;
+  overflow-wrap:break-word;overflow-x:hidden}
+a{color:inherit}
+.wrap{width:min(1240px,calc(100% - 64px));margin:0 auto}
+.tag{font:600 11px/1.3 var(--mono);letter-spacing:.16em;text-transform:uppercase}
+.section-head{display:grid;grid-template-columns:160px 1fr;gap:32px;margin-bottom:54px}
+.section-head h2{font-size:clamp(32px,5vw,68px);font-weight:700;letter-spacing:-.055em;line-height:1.05}
+.section-head p{max-width:49ch;margin-top:18px;color:var(--ink-2);font-size:16px}
 
-.mono{font-family:var(--mono)}
-.tag{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.14em;
-  text-transform:uppercase}
+/* Header */
+.site-head{position:absolute;inset:0 0 auto;z-index:10;border-bottom:1px solid rgba(16,18,20,.55)}
+.head-inner{height:72px;display:flex;align-items:center}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-size:15px;font-weight:700;letter-spacing:-.025em}
+.brand i{width:26px;height:26px;background:url("logo-mark.png") center/contain no-repeat;flex:0 0 auto}
+@media(prefers-color-scheme:dark){.brand i{background-image:url("logo-mark-dark.png")}}
+.site-head nav{display:flex;gap:30px;margin-left:auto;align-items:center}
+.site-head nav a{font:500 12px/1 var(--mono);text-decoration:none;letter-spacing:.02em}
+.site-head nav a:hover{color:var(--blue)}
+.site-head .contact{margin-left:30px;padding:11px 16px;background:var(--ink);color:var(--paper);
+  border:1px solid var(--line);font:600 12px/1 var(--mono);text-decoration:none}
+.site-head .contact:hover{background:var(--blue);color:#fff}
 
-/* ── 맨 위 줄 — 항목마다 제 상자를 가진다 ──────────────── */
-.bar{position:absolute;top:0;left:0;right:0;z-index:5;
-  display:flex;align-items:stretch;gap:0;flex-wrap:wrap}
-.bar .brand{display:flex;align-items:center;gap:9px;background:var(--paper);
-  border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:12px 18px}
-.bar .brand i{width:22px;height:22px;flex:0 0 auto;
-  background:url("logo-mark.png") center/contain no-repeat}
-@media (prefers-color-scheme:dark){.bar .brand i{background-image:url("logo-mark-dark.png")}}
-.bar .brand b{font-size:15px;font-weight:700;letter-spacing:-.02em}
-.bar nav{display:flex;margin:0 auto}
-.bar nav a{display:flex;align-items:center;padding:12px 20px;background:var(--paper);
-  border:1px solid var(--line);border-top:0;border-left:0;
-  font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.02em;
-  color:var(--ink);text-decoration:none;white-space:nowrap}
-.bar nav a:first-child{border-left:1px solid var(--line)}
-.bar nav a:hover{background:var(--blue);color:#fff}
-.bar .cta{display:flex;align-items:center;padding:12px 20px;background:var(--ink);
-  color:var(--paper);border-bottom:1px solid var(--line);border-left:1px solid var(--line);
-  font-family:var(--mono);font-size:12px;font-weight:600;text-decoration:none;white-space:nowrap}
-.bar .cta:hover{background:var(--blue);color:#fff}
-@media(max-width:900px){.bar nav{display:none}}
+/* Hero */
+.hero{position:relative;min-height:790px;padding:152px 0 70px;background:var(--hero) center/cover no-repeat;
+  border-bottom:1px solid var(--line);display:flex;align-items:center}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--paper) 0%,rgba(255,255,255,.88) 42%,rgba(255,255,255,.08) 78%);pointer-events:none}
+@media(prefers-color-scheme:dark){.hero:after{background:linear-gradient(90deg,var(--paper) 0%,rgba(9,12,17,.9) 42%,rgba(9,12,17,.1) 78%)}}
+.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(300px,.75fr);gap:74px;align-items:end}
+.hero-copy{padding-top:30px}
+.hero-copy .tag{color:var(--blue);display:flex;align-items:center;gap:12px}
+.hero-copy .tag:before{content:"";width:34px;height:2px;background:var(--blue)}
+.hero h1{font-size:clamp(54px,7.3vw,96px);font-weight:700;letter-spacing:-.065em;line-height:.98;margin-top:24px;max-width:8.2ch}
+.hero h1 em{font-style:normal;color:var(--blue)}
+.hero-lede{max-width:590px;margin-top:34px;font-size:clamp(17px,1.6vw,21px);line-height:1.75;color:var(--ink-2);letter-spacing:-.02em}
+.actions{display:flex;gap:12px;align-items:center;margin-top:38px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 22px;border:1px solid var(--line);
+  background:var(--blue);color:#fff;text-decoration:none;font:600 13px/1 var(--mono);box-shadow:4px 4px 0 rgba(16,18,20,.2)}
+.btn:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 rgba(16,18,20,.2)}
+.btn.secondary{background:var(--paper);color:var(--ink);box-shadow:none}
+.btn.secondary:hover{background:var(--ink);color:var(--paper);transform:none}
+.studio-card{border:1px solid var(--line);background:var(--paper);box-shadow:8px 8px 0 rgba(16,18,20,.18)}
+.studio-card .card-top{display:flex;justify-content:space-between;padding:9px 13px;background:var(--ink);color:var(--paper);
+  font:600 10px/1.3 var(--mono);letter-spacing:.12em}
+.studio-card .card-body{padding:26px 24px 24px}
+.studio-card .status{font:600 11px/1.4 var(--mono);color:var(--blue);letter-spacing:.1em}
+.studio-card ol{list-style:none;margin-top:19px;border-top:1px solid var(--line)}
+.studio-card li{display:grid;grid-template-columns:36px 1fr auto;gap:12px;align-items:center;padding:15px 0;border-bottom:1px solid var(--line)}
+.studio-card li span:first-child{font:500 11px/1 var(--mono);color:var(--ink-3)}
+.studio-card li strong{font-size:15px;letter-spacing:-.02em}
+.studio-card li small{font:500 10px/1 var(--mono);color:var(--ink-3)}
+.studio-card .card-foot{margin-top:22px;font:500 11px/1.6 var(--mono);color:var(--ink-2)}
 
-/* ── 첫 화면 — 디더 구름 위의 터미널 상자 ──────────────── */
-.hero{position:relative;min-height:min(86vh,760px);display:grid;place-items:center;
-  padding:120px 20px 80px;background:var(--hero) center/cover no-repeat}
+/* Trust strip */
+.trust{border-bottom:1px solid var(--line);background:var(--paper)}
+.trust-grid{display:grid;grid-template-columns:repeat(3,1fr)}
+.trust-item{padding:25px 24px;border-left:1px solid var(--line)}
+.trust-item:last-child{border-right:1px solid var(--line)}
+.trust-item small{display:block;font:600 10px/1.3 var(--mono);letter-spacing:.12em;color:var(--ink-3)}
+.trust-item strong{display:block;margin-top:8px;font-size:17px;letter-spacing:-.025em}
 
-/* 터미널 상자 */
-.win{width:min(560px,100%);border:1px solid var(--line);
-  box-shadow:7px 7px 0 rgba(17,19,21,.22)}
-@media (prefers-color-scheme:dark){.win{box-shadow:7px 7px 0 rgba(0,0,0,.5)}}
-.win .ttl{background:var(--blue);color:#fff;border-bottom:1px solid var(--line);
-  padding:8px 14px;font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.06em}
-.win .ttl.dk{background:var(--ink);color:var(--paper)}
-.win .bd{background:var(--panel);padding:34px 28px 30px;text-align:center}
-.win .lead{font-family:var(--mono);font-size:12.5px;font-weight:600;letter-spacing:.16em;
-  text-transform:uppercase;color:var(--blue);margin-bottom:16px}
-.win h1{font-size:clamp(26px,3.6vw,38px);font-weight:700;letter-spacing:-.045em;
-  line-height:1.25;color:var(--ink)}
-.win p{margin-top:16px;font-size:14.5px;color:var(--ink-2);max-width:34ch;
-  margin-left:auto;margin-right:auto}
-.btn{display:inline-block;margin-top:26px;background:var(--blue);color:#fff;
-  border:1px solid var(--line);padding:13px 30px;
-  font-family:var(--mono);font-size:13.5px;font-weight:600;letter-spacing:.04em;
-  text-decoration:none;box-shadow:4px 4px 0 rgba(17,19,21,.28)}
-.btn:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 rgba(17,19,21,.28)}
+/* About */
+.about{position:relative;padding:126px 0 132px}
+.crop{position:absolute;width:22px;height:22px;border:1px solid var(--ink-3)}
+.crop.tl{top:28px;left:10px;border-right:0;border-bottom:0}.crop.tr{top:28px;right:10px;border-left:0;border-bottom:0}
+.about-grid{display:grid;grid-template-columns:160px 1fr;gap:32px}
+.manifesto{font-size:clamp(42px,7vw,92px);font-weight:700;line-height:1.04;letter-spacing:-.065em;max-width:13ch}
+.manifesto em{font-style:normal;color:var(--blue)}
+.about-note{display:grid;grid-template-columns:1fr 1fr;gap:36px;margin-top:66px;padding-top:28px;border-top:1px solid var(--line)}
+.about-note p{color:var(--ink-2);font-size:15px;max-width:47ch}
+.about-note strong{display:block;color:var(--ink);font:600 12px/1.3 var(--mono);letter-spacing:.06em;margin-bottom:10px}
 
-/* ── 재단 마크 + 세로 글자 ─────────────────────────────── */
-.plate{position:relative;padding:90px 0 96px}
-.plate .mk{position:absolute;width:20px;height:20px;border:1px solid var(--ink-3)}
-.plate .mk.tl{top:26px;left:8px;border-right:0;border-bottom:0}
-.plate .mk.tr{top:26px;right:8px;border-left:0;border-bottom:0}
-.plate .mk.bl{bottom:26px;left:8px;border-right:0;border-top:0}
-.plate .mk.br{bottom:26px;right:8px;border-left:0;border-top:0}
-.vert{position:absolute;left:-2px;top:50%;transform:translateY(-50%);
-  writing-mode:vertical-rl;font-family:var(--mono);font-size:10px;letter-spacing:.3em;
-  color:var(--ink-3);white-space:nowrap}
-@media(max-width:1100px){.vert{display:none}.plate .mk{display:none}}
+/* Principles */
+.principles{padding:112px 0;background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.principle-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.principle{background:var(--paper);border:1px solid var(--line);box-shadow:5px 5px 0 rgba(16,18,20,.12);min-height:315px;display:flex;flex-direction:column}
+.principle-top{display:flex;justify-content:space-between;padding:9px 13px;background:var(--ink);color:var(--paper);font:600 10px/1.2 var(--mono);letter-spacing:.12em}
+.principle-body{padding:29px 25px;display:flex;flex:1;flex-direction:column}
+.principle h3{font-size:23px;line-height:1.35;letter-spacing:-.04em;max-width:10ch}
+.principle p{margin-top:auto;padding-top:36px;color:var(--ink-2);font-size:14px;line-height:1.8}
 
-/* 점선 리더 */
-.leader{display:flex;align-items:baseline;gap:12px;
-  font-family:var(--mono);font-size:12.5px;letter-spacing:.04em;color:var(--ink-2);
-  max-width:880px;margin:0 auto 34px}
-.leader .dots{flex:1;border-bottom:2px dotted var(--ink-3);transform:translateY(-4px)}
+/* Company */
+.company{padding:112px 0}
+.company-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+.company-copy .tag{color:var(--blue)}
+.company-copy h2{font-size:clamp(36px,5vw,64px);line-height:1.08;letter-spacing:-.055em;margin-top:20px;max-width:10ch}
+.company-copy p{color:var(--ink-2);font-size:16px;max-width:42ch;margin-top:24px}
+.tbl{border:1px solid var(--line);box-shadow:6px 6px 0 rgba(16,18,20,.12)}
+.tbl .ttl{background:var(--blue);color:#fff;padding:9px 14px;font:600 10px/1.3 var(--mono);letter-spacing:.12em}
+.tbl .row{display:grid;grid-template-columns:112px 1fr;gap:18px;padding:15px 16px;border-top:1px solid var(--line);background:var(--paper)}
+.tbl dt{font:500 11px/1.5 var(--mono);letter-spacing:.08em;color:var(--ink-3)}
+.tbl dd{font-size:14px}.tbl dd .en{font:400 11px/1.4 var(--mono);color:var(--ink-3);margin-left:6px}
+.tbl a{color:var(--blue);text-decoration:none}.tbl a:hover{text-decoration:underline}
 
-/* ⚠️ max-width 를 걸지 않는다. <br> 로 두 줄을 정해 놨는데 폭까지 묶으면
-   [합니다] 가 셋째 줄로 밀린다. 좁은 화면에서는 알아서 접히게 둔다. */
-.giant{text-align:center;font-size:clamp(34px,8.2vw,104px);font-weight:700;
-  letter-spacing:-.055em;line-height:1.0}
-.giant em{font-style:normal;color:var(--blue)}
+/* Contact */
+.end{padding:108px 0;background:var(--blue);color:#fff;text-align:center}
+.end .tag{opacity:.75}
+.end h2{font-size:clamp(38px,6vw,76px);line-height:1.04;letter-spacing:-.06em;margin:20px auto 0;max-width:10ch}
+.end p{max-width:42ch;margin:24px auto 0;font-size:16px;opacity:.82}
+.end .btn{background:#fff;color:#0d3971;border-color:#0d3971;box-shadow:4px 4px 0 rgba(2,45,97,.55)}
 
-/* ── 원칙 — 상자 셋 ────────────────────────────────────── */
-.band{padding:84px 0;background:var(--paper-2);border-top:1px solid var(--line);
-  border-bottom:1px solid var(--line)}
-.band .hd{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:12px}
-.band h2{font-size:clamp(24px,3vw,34px);font-weight:700;letter-spacing:-.04em}
-.band .lede{font-size:15px;color:var(--ink-2);max-width:46ch;margin-bottom:46px}
-.boxes{display:grid;grid-template-columns:1fr;gap:22px}
-@media(min-width:900px){.boxes{grid-template-columns:repeat(3,1fr);gap:24px}}
-.box{border:1px solid var(--line);background:var(--paper);
-  box-shadow:5px 5px 0 rgba(17,19,21,.13);display:flex;flex-direction:column}
-@media (prefers-color-scheme:dark){.box{box-shadow:5px 5px 0 rgba(0,0,0,.45)}}
-.box .ttl{background:var(--ink);color:var(--paper);padding:7px 13px;
-  font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.12em;
-  display:flex;justify-content:space-between;gap:10px}
-.box .bd{padding:22px 20px 24px}
-.box h3{font-size:17.5px;font-weight:700;letter-spacing:-.03em;line-height:1.45;
-  margin-bottom:10px}
-.box p{font-size:14px;color:var(--ink-2);text-wrap:pretty}
+footer{border-top:1px solid var(--line);padding:30px 0;background:var(--paper-2)}
+.foot-row{display:flex;gap:16px 34px;align-items:center;flex-wrap:wrap;font:500 11px/1.5 var(--mono);color:var(--ink-2)}
+.foot-row .motto{color:var(--blue);font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.foot-row nav{margin-left:auto;display:flex;gap:20px;flex-wrap:wrap}.foot-row a{text-decoration:none}.foot-row a:hover{color:var(--blue)}
 
-/* ── 회사 정보 — 표 ────────────────────────────────────── */
-.sheet{padding:84px 0}
-.sheet h2{font-size:clamp(24px,3vw,34px);font-weight:700;letter-spacing:-.04em;
-  margin-bottom:34px}
-.tbl{border:1px solid var(--line);max-width:760px;
-  box-shadow:5px 5px 0 rgba(17,19,21,.13)}
-@media (prefers-color-scheme:dark){.tbl{box-shadow:5px 5px 0 rgba(0,0,0,.45)}}
-.tbl .ttl{background:var(--ink);color:var(--paper);padding:8px 14px;
-  font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.12em}
-.tbl .row{display:flex;gap:18px;align-items:baseline;padding:13px 16px;
-  border-top:1px solid var(--line);background:var(--paper)}
-.tbl .row:first-of-type{border-top:0}
-.tbl dt{flex:0 0 8em;font-family:var(--mono);font-size:11px;letter-spacing:.1em;
-  text-transform:uppercase;color:var(--ink-3)}
-.tbl dd{font-size:14.5px;color:var(--ink)}
-.tbl dd .en{font-family:var(--mono);font-size:12px;color:var(--ink-3)}
-.tbl a{color:var(--blue);text-decoration:none}
-.tbl a:hover{text-decoration:underline}
-
-/* ── 맺음 ─────────────────────────────────────────────── */
-.end{text-align:center;padding:96px 0 90px;border-top:1px solid var(--line)}
-.end .tag{color:var(--blue);margin-bottom:22px}
-.end h2{font-size:clamp(30px,5.4vw,66px);font-weight:700;letter-spacing:-.05em;
-  line-height:1.05;max-width:16ch;margin:0 auto}
-.end p{margin-top:22px;font-size:15px;color:var(--ink-2);max-width:34ch;
-  margin-left:auto;margin-right:auto}
-
-footer{border-top:1px solid var(--line);padding:26px 0;background:var(--paper-2)}
-.frow{display:flex;flex-wrap:wrap;gap:14px 34px;align-items:center;
-  font-family:var(--mono);font-size:11.5px;color:var(--ink-2)}
-.frow .mt{color:var(--blue);font-weight:600;letter-spacing:.1em;text-transform:uppercase}
-.frow nav{margin-left:auto;display:flex;gap:22px;flex-wrap:wrap;align-items:center}
-.frow nav a{color:var(--ink-2);text-decoration:none}
-.frow nav a:hover{color:var(--blue)}
-.frow .grp{color:var(--ink-3);letter-spacing:.1em;text-transform:uppercase;font-size:10.5px}
+@media(max-width:900px){
+  .wrap{width:min(100% - 40px,720px)}
+  .site-head nav{display:none}.site-head .contact{margin-left:auto}
+  .hero{min-height:auto;padding:132px 0 72px}
+  .hero:after{background:linear-gradient(180deg,var(--paper) 0%,rgba(255,255,255,.92) 58%,rgba(255,255,255,.28) 100%)}
+  .hero-grid{grid-template-columns:1fr;gap:50px}.hero h1{max-width:9ch}
+  .studio-card{width:min(100%,520px)}
+  .section-head,.about-grid{grid-template-columns:1fr;gap:20px}
+  .principle-grid{grid-template-columns:1fr}.principle{min-height:0}.principle p{margin-top:26px;padding-top:0}
+  .company-grid{grid-template-columns:1fr;gap:46px}
+}
+@media(max-width:640px){
+  .wrap{width:calc(100% - 36px)}.head-inner{height:64px}.brand{font-size:14px}.site-head .contact{padding:10px 12px}
+  .hero{padding-top:116px}.hero h1{font-size:48px}.hero-lede{font-size:16px;line-height:1.72}
+  .trust-grid{grid-template-columns:1fr}.trust-item{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px}
+  .trust-item:last-child{border-bottom:0}
+  .about,.principles,.company{padding:84px 0}.about-note{grid-template-columns:1fr;gap:28px;margin-top:46px}
+  .section-head{margin-bottom:38px}.section-head h2{font-size:40px}.principle-grid{gap:18px}
+  .tbl .row{grid-template-columns:84px 1fr}.tbl dd .en{display:block;margin:4px 0 0}
+  .foot-row nav{margin-left:0;width:100%;gap:14px 18px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn:hover{transform:none}}
 </style>
 </head>
 <body>
 
-<section class="hero">
-  <div class="bar">
-    <div class="brand"><i></i><b>톰즈워커즈</b></div>
-    <nav>
-      <a href="#how">만드는 방식</a>
+<header class="site-head">
+  <div class="wrap head-inner">
+    <a class="brand" href="#top" aria-label="톰즈워커즈 홈"><i aria-hidden="true"></i><span>톰즈워커즈</span></a>
+    <nav aria-label="주요 메뉴">
+      <a href="#about">회사 소개</a>
+      <a href="#principles">만드는 원칙</a>
       <a href="#company">회사 정보</a>
     </nav>
-    <a class="cta" href="mailto:tom@tomsworkers.io">문의하기</a>
+    <a class="contact" href="mailto:tom@tomsworkers.io">문의하기 ↗</a>
   </div>
+</header>
 
-  <div class="win">
-    <div class="ttl">2026 · TOMSWORKERS</div>
-    <div class="bd">
-      <div class="lead">Build software that sails</div>
-      <h1>만들고, 내보내고,<br>지킵니다</h1>
-      <p>주식회사 톰즈워커즈는 소프트웨어를 만듭니다.</p>
-      <a class="btn" href="mailto:tom@tomsworkers.io">문의하기</a>
-    </div>
-  </div>
-</section>
-
-<div class="plate">
-  <span class="mk tl"></span><span class="mk tr"></span>
-  <span class="mk bl"></span><span class="mk br"></span>
-  <div class="vert">TOMSWORKERS INC. · SEOUL · EST. 2026</div>
-  <div class="wrap">
-    <div class="leader">
-      <span>주식회사 톰즈워커즈</span>
-      <span class="dots"></span>
-      <span>tomsworkers.io</span>
-    </div>
-    <h2 class="giant"><em>오래 가는</em><br>소프트웨어를 만듭니다</h2>
-  </div>
-</div>
-
-<div class="band" id="how">
-  <div class="wrap">
-    <div class="hd">
-      <span class="tag" style="color:var(--blue)">01 — 원칙</span>
-      <h2>만드는 방식</h2>
-    </div>
-    <p class="lede">소프트웨어를 잘 만드는 방법은 아직 잘 모르겠습니다. 다만
-      지키기로 정한 것은 셋 있습니다.</p>
-
-    <div class="boxes">
-      <div class="box">
-        <div class="ttl"><span>RULE 01</span><span>■</span></div>
-        <div class="bd">
-          <h3>필요 없는 것은 싣지 않습니다</h3>
-          <p>만들 때마다 [이게 없어도 되나]를 먼저 봅니다. 계정, 개인정보, 광고
-            식별자, 분석 도구 — 없어도 되면 넣지 않습니다. 싣지 않은 것은
-            고장 나지 않습니다.</p>
+<main>
+  <section class="hero" id="top">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <div class="tag">Independent software studio · Seoul</div>
+        <h1>만들고<br><em>끝내지</em><br>않습니다.</h1>
+        <p class="hero-lede">톰즈워커즈는 제품의 기획과 개발부터 출시 이후의 운영과 개선까지 책임지는 소프트웨어 스튜디오입니다.</p>
+        <div class="actions">
+          <a class="btn" href="#principles">우리가 만드는 방식 ↓</a>
+          <a class="btn secondary" href="mailto:tom@tomsworkers.io">프로젝트 문의</a>
         </div>
       </div>
-      <div class="box">
-        <div class="ttl"><span>RULE 02</span><span>■</span></div>
-        <div class="bd">
-          <h3>적은 것과 만든 것을 맞춥니다</h3>
-          <p>문서에 적힌 것과 코드가 하는 일이 같아야 합니다. 이용약관, 개인정보
-            처리방침, 스토어에 신고하는 항목까지 실제 동작에 맞춥니다. 문서가
-            물건보다 좋게 적히는 일은 없습니다.</p>
+      <aside class="studio-card" aria-label="톰즈워커즈 작업 과정">
+        <div class="card-top"><span>TOMSWORKERS / PROCESS</span><span>2026</span></div>
+        <div class="card-body">
+          <div class="status">● ONE TEAM, END TO END</div>
+          <ol>
+            <li><span>01</span><strong>제품을 설계합니다</strong><small>PLAN</small></li>
+            <li><span>02</span><strong>제대로 만듭니다</strong><small>BUILD</small></li>
+            <li><span>03</span><strong>오래 운영합니다</strong><small>OPERATE</small></li>
+          </ol>
+          <p class="card-foot">BUILD SOFTWARE THAT SAILS<br>SEOUL, REPUBLIC OF KOREA</p>
         </div>
-      </div>
-      <div class="box">
-        <div class="ttl"><span>RULE 03</span><span>■</span></div>
-        <div class="bd">
-          <h3>내보낸 뒤가 더 깁니다</h3>
-          <p>만드는 데 걸리는 시간보다 떠 있게 하는 시간이 깁니다. 내보내고
-            나서 고치고 지키는 것까지를 일로 칩니다. 띄워 놓고 손 떼지
-            않습니다.</p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="trust" aria-label="회사 핵심 정보">
+    <div class="wrap trust-grid">
+      <div class="trust-item"><small>ESTABLISHED</small><strong>2026년 설립</strong></div>
+      <div class="trust-item"><small>BASED IN</small><strong>대한민국 서울</strong></div>
+      <div class="trust-item"><small>FROM / TO</small><strong>기획 · 개발 · 운영</strong></div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <span class="crop tl" aria-hidden="true"></span><span class="crop tr" aria-hidden="true"></span>
+    <div class="wrap about-grid">
+      <div class="tag">01 — About us</div>
+      <div>
+        <h2 class="manifesto">제품의 시작부터<br><em>오래 가는 운영</em>까지.</h2>
+        <div class="about-note">
+          <p><strong>WHY WE BUILD</strong>좋은 소프트웨어는 기능을 출시하는 데서 끝나지 않습니다. 실제로 쓰이고, 고쳐지고, 시간이 지나도 믿고 사용할 수 있어야 합니다.</p>
+          <p><strong>HOW WE WORK</strong>톰즈워커즈는 필요한 것을 정확히 만들고, 설명한 내용과 실제 동작을 맞추며, 출시한 제품을 꾸준히 돌봅니다.</p>
         </div>
       </div>
     </div>
-  </div>
-</div>
+  </section>
 
-<div class="sheet" id="company">
-  <div class="wrap">
-    <h2>회사 정보</h2>
-    <!-- ⚠️ 사업자등록번호와 주소는 일부러 비워 뒀다. 통신판매업도 전자상거래도
-         하지 않아 전자상거래법상 표시 의무가 없다. 빠뜨린 것이 아니다. -->
-    <dl class="tbl">
-      <div class="ttl">COMPANY</div>
-      <div class="row"><dt>상호</dt><dd>주식회사 톰즈워커즈 <span class="en">Tomsworkers Inc.</span></dd></div>
-      <div class="row"><dt>대표자</dt><dd>Tom</dd></div>
-      <div class="row"><dt>설립</dt><dd>2026년 8월 11일</dd></div>
-      <div class="row"><dt>하는 일</dt><dd>소프트웨어 개발</dd></div>
-      <div class="row"><dt>이메일</dt><dd><a href="mailto:tom@tomsworkers.io">tom@tomsworkers.io</a></dd></div>
-    </dl>
-  </div>
-</div>
+  <section class="principles" id="principles">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="tag">02 — Principles</div>
+        <div><h2>신뢰를 만드는<br>세 가지 원칙</h2><p>빠르게 만드는 것만큼, 필요한 것을 정확히 만들고 출시 이후까지 책임지는 일을 중요하게 생각합니다.</p></div>
+      </div>
+      <div class="principle-grid">
+        <article class="principle">
+          <div class="principle-top"><span>RULE 01</span><span>■</span></div>
+          <div class="principle-body"><h3>필요한 것만 정확하게</h3><p>기능과 데이터는 많을수록 좋은 것이 아닙니다. 제품에 꼭 필요한 것인지 먼저 묻고, 복잡성과 위험을 줄입니다.</p></div>
+        </article>
+        <article class="principle">
+          <div class="principle-top"><span>RULE 02</span><span>■</span></div>
+          <div class="principle-body"><h3>말한 것과 만든 것을 같게</h3><p>문서, 정책, 스토어 정보와 제품의 실제 동작을 일치시킵니다. 사용자가 받은 약속을 코드에서도 지킵니다.</p></div>
+        </article>
+        <article class="principle">
+          <div class="principle-top"><span>RULE 03</span><span>■</span></div>
+          <div class="principle-body"><h3>출시 이후까지 책임 있게</h3><p>출시는 운영의 시작입니다. 문제를 고치고 경험을 개선하며, 제품이 오래 안정적으로 쓰이도록 관리합니다.</p></div>
+        </article>
+      </div>
+    </div>
+  </section>
 
-<section class="end">
-  <div class="wrap">
-    <div class="tag">Say hello</div>
-    <h2>하고 싶은 말이<br>있으시면</h2>
-    <p>제안도, 버그 제보도, 그냥 하는 이야기도 좋습니다.</p>
-    <a class="btn" href="mailto:tom@tomsworkers.io">tom@tomsworkers.io</a>
-  </div>
-</section>
+  <section class="company" id="company">
+    <div class="wrap company-grid">
+      <div class="company-copy">
+        <div class="tag">03 — Company</div>
+        <h2>작게 시작해도<br>오래 갈 수 있도록.</h2>
+        <p>톰즈워커즈는 아이디어를 실제 서비스로 만들고 운영하는 소프트웨어 회사입니다.</p>
+      </div>
+      <dl class="tbl">
+        <div class="ttl">COMPANY INFORMATION</div>
+        <div class="row"><dt>상호</dt><dd>주식회사 톰즈워커즈 <span class="en">Tomsworkers Inc.</span></dd></div>
+        <div class="row"><dt>대표자</dt><dd>Tom</dd></div>
+        <div class="row"><dt>설립</dt><dd>2026년 8월 11일</dd></div>
+        <div class="row"><dt>사업 분야</dt><dd>소프트웨어 기획 · 개발 · 운영</dd></div>
+        <div class="row"><dt>이메일</dt><dd><a href="mailto:tom@tomsworkers.io">tom@tomsworkers.io</a></dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="end">
+    <div class="wrap">
+      <div class="tag">Start a conversation</div>
+      <h2>함께 만들 이야기가 있다면</h2>
+      <p>새로운 제품, 운영 중인 서비스, 협업에 관한 이야기를 들려주세요.</p>
+      <a class="btn" href="mailto:tom@tomsworkers.io">tom@tomsworkers.io ↗</a>
+    </div>
+  </section>
+</main>
 
 <footer>
-  <div class="wrap">
-    <div class="frow">
-      <span class="mt">Build software that sails</span>
-      <span>주식회사 톰즈워커즈</span>
-      <nav>
-        <span class="grp">마이베이스볼스타</span>
-        <a href="https://mybaseballstar.app">사이트</a>
-        <a href="https://www.instagram.com/mybaseballstar/">인스타그램</a>
-        <a href="https://mybaseballstar.app/terms">이용약관</a>
-        <a href="https://mybaseballstar.app/privacy">개인정보 처리방침</a>
-      </nav>
-    </div>
+  <div class="wrap foot-row">
+    <span class="motto">Build software that sails</span>
+    <span>© 2026 Tomsworkers Inc.</span>
+    <nav aria-label="제품 관련 링크">
+      <span>마이베이스볼스타</span>
+      <a href="https://mybaseballstar.app">사이트</a>
+      <a href="https://www.instagram.com/mybaseballstar/">인스타그램</a>
+      <a href="https://mybaseballstar.app/terms">이용약관</a>
+      <a href="https://mybaseballstar.app/privacy">개인정보 처리방침</a>
+    </nav>
   </div>
 </footer>
 
