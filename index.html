@@ -51,9 +51,9 @@ a{color:inherit}
 
 /* Header */
 .site-head{position:absolute;inset:0 0 auto;z-index:10;border-bottom:1px solid rgba(16,18,20,.55)}
-.head-inner{height:72px;display:flex;align-items:center}
-.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-size:15px;font-weight:700;letter-spacing:-.025em}
-.brand i{width:26px;height:26px;background:url("logo-mark.png") center/contain no-repeat;flex:0 0 auto}
+.head-inner{height:84px;display:flex;align-items:center}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;font-size:18px;font-weight:700;letter-spacing:-.025em}
+.brand i{width:36px;height:36px;background:url("logo-mark.png") center/contain no-repeat;flex:0 0 auto}
 @media(prefers-color-scheme:dark){.brand i{background-image:url("logo-mark-dark.png")}}
 .site-head nav{display:flex;gap:30px;margin-left:auto;align-items:center}
 .site-head nav a{font:500 12px/1 var(--mono);text-decoration:none;letter-spacing:.02em}
@@ -159,7 +159,7 @@ footer{border-top:1px solid var(--line);padding:30px 0;background:var(--paper-2)
   .hero:after{background:linear-gradient(180deg,var(--paper) 0%,rgba(9,12,17,.92) 58%,rgba(9,12,17,.3) 100%)}
 }
 @media(max-width:640px){
-  .wrap{width:calc(100% - 36px)}.head-inner{height:64px}.brand{font-size:14px}.site-head .contact{padding:10px 12px}
+  .wrap{width:calc(100% - 36px)}.head-inner{height:72px}.brand{font-size:16px}.brand i{width:32px;height:32px}.site-head .contact{padding:10px 12px}
   .hero{padding-top:116px}.hero h1{font-size:48px}.hero-lede{font-size:16px;line-height:1.72}
   .trust-grid{grid-template-columns:1fr}.trust-item{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px}
   .trust-item:last-child{border-bottom:0}
